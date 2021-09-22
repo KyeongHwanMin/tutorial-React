@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
 function formatName(user) {
   return user.firstName + ' ' + user.lastName;
 }
