@@ -9,8 +9,17 @@ function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 
-const element = <Welcome name="Sara" />;
-ReactDOM.render(element, document.getElementById('root'));
+function App2() {
+  return (
+    <div>
+      <Welcome name="Sara" />
+      <Welcome name="Cahal" />
+      <Welcome name="Edite" />
+    </div>
+  );
+}
+
+ReactDOM.render(<App2 />, document.getElementById('root'));
 
 
 
