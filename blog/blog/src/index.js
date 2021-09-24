@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
+//import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-class EssayForm extends React.Component {
+class FlavorForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: 'Please write an essay about your favorite DOM element.'
-    };
+    this.state = {value: 'coconut'};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +18,7 @@ class EssayForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('An essay was submitted: ' + this.state.value);
+    alert('Your favorite flavor is: ' + this.state.value);
     event.preventDefault();
   }
 
@@ -28,8 +26,13 @@ class EssayForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Essay:
-          <textarea value={this.state.value} onChange={this.handleChange} />
+          Pick your favorite flavor:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
         </label>
         <input type="submit" value="Submit" />
       </form>
@@ -38,7 +41,7 @@ class EssayForm extends React.Component {
 }
 
 ReactDOM.render(
-  <EssayForm />,
+  <FlavorForm />,
   document.getElementById('root')
 );
 
