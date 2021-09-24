@@ -4,43 +4,40 @@ import './index.css';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-function Contacts() {
-  return <div className="Contacts" />;
-}
-
-function Chat() {
-  return <div className="Chat" />;
-}
-
-function SplitPane(props) {
+function FancyBorder(props) {
   return (
-    <div className="SplitPane">
-      <div className="SplitPane-left">
-        {props.left}
-      </div>
-      <div className="SplitPane-right">
-        {props.right}
-      </div>
+    <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
     </div>
   );
 }
 
-function App() {
+function Dialog(props) {
   return (
-    <SplitPane
-      left={
-        <Contacts />
-      }
-      right={
-        <Chat />
-      } />
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">
+        {props.title}
+      </h1>
+      <p className="Dialog-message">
+        {props.message}
+      </p>
+    </FancyBorder>
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    <Dialog
+      title="Welcome"
+      message="Thank you for visiting our spacecraft!" />
   );
 }
 
 ReactDOM.render(
-  <App />,
+  <WelcomeDialog />,
   document.getElementById('root')
 );
+
 
 
 
